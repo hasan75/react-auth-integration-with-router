@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>
