@@ -4,6 +4,7 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
+  GithubAuthProvider,
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
@@ -15,9 +16,22 @@ const useFirebase = () => {
   const [error, setError] = useState('');
 
   const auth = getAuth();
+  const googleProvider = new GoogleAuthProvider();
+
   const signInUsingGoogle = () => {
-    const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const signInUsingGithub = () => {
+    const githubProvider = new GithubAuthProvider();
+    signInWithPopup(auth, githubProvider)
       .then((result) => {
         console.log(result.user);
         setUser(result.user);
@@ -46,6 +60,7 @@ const useFirebase = () => {
     user,
     error,
     signInUsingGoogle,
+    signInUsingGithub,
     logOut,
   };
 };
