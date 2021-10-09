@@ -8,6 +8,8 @@ import Register from './components/Register/Register';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
 import Shipping from './components/Shipping/Shipping';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -28,9 +30,12 @@ function App() {
             <Route exact path='/login'>
               <Login></Login>
             </Route>
-            <Route exact path='/shipping'>
+            <PrivateRoute path='/shipping'>
               <Shipping></Shipping>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path='/placeorder'>
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
