@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
+import Shipping from './components/Shipping/Shipping';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route exact path='/login'>
               <Login></Login>
+            </Route>
+            <Route exact path='/shipping'>
+              <Shipping></Shipping>
             </Route>
             <Route path='*'>
               <NotFound></NotFound>
