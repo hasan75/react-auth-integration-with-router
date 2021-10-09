@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+import useFirebase from '../../hooks/useFirebase';
 import './Header.css';
 
 const Header = () => {
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
   return (
     <div className='header'>
       <Link to='/home'>Home</Link>

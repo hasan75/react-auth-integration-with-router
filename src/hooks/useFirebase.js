@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import initializeAuthentication from '../../Firebase/Firebase.init';
+import initializeAuthentication from '../Firebase/Firebase.init';
 import {
   getAuth,
   signInWithPopup,
@@ -47,6 +47,7 @@ const useFirebase = () => {
     });
   };
 
+  //if auth state change, it will run for one time
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
