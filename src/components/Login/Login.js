@@ -8,7 +8,7 @@ const Login = () => {
     <div>
       <h2>Please Login</h2>
       <button onClick={signInUsingGoogle}>Google Sign In</button>
-      <br /> <br />
+      <br />
       <button onClick={signInUsingGithub}>GitHub Sign In</button> <br />
       <Link to='/register'>New User?</Link>
     </div>
